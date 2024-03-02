@@ -13,6 +13,7 @@ export default {
 			'gradient-2' : '#FF6F48',
 			'gradient-3' : '#4851FF',
 			'gradient-4' : '#F02AA6',
+			'custom-white' : '#ffffff'
 		}
 	},
 	plugins: [],
