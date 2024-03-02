@@ -4,16 +4,20 @@ interface Props {
     text: string
 }
 
+import Animation from '@/assets/icons/Animations.astro'
+
 const { title, text } = Astro.props
 ---
 
-<article>
-    <picture>
-        <img src='' alt=`Icon ${title}`>
-    </picture>
+<article class="w-[340px] py-10 px-6 bg-custom-white relative rounded-[10px]">
+    <div class="absolute top-[-30px]">
+        <Animation />
+    </div>
     <header>
-        <h2>{title}</h2>
-        <p>{text}</p>
+        <h2 class="text-xl font-extrabold text-custom-blue mb-4">{title}</h2>
+        <p class="text-base text-custom-gray leading-[26px]">{text}</p>
     </header>
-    <span>Get Started</span>
+    <footer class="mt-5">
+        <span class="text-lg leading-7 text-custom-pink font-bold">Get Started</span>
+    </footer>
 </article>
