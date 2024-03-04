@@ -2,15 +2,15 @@
 import Button2 from './Button2.astro'
 ---
 
-<main class="min-w-[343px] mx-4 md:mx-6 lg:mx-10">
-    <section class="flex flex-col items-center">
-        <div class="max-w-[457px]">
+<main class="min-w-[343px] mx-4 table:mx-10 desktop:mx-44 table:mt-30">
+    <section class="flex flex-col table:flex-row">
+        <div class="max-w-[360px] table:mt-9 desktop:mt-32">
             <h1 class="text-[40px] text-custom-blue font-extrabold mb-3">Maximize skill, minimize budget</h1>
             <p class="text-base text-custom-purple leading-[26px] mb-6 text-pretty">Our modern courses across a range of in-demand skills will give you the knowledge you need to live the life you want.</p>
             <Button2 content="Get Started"/>
         </div>
         <div>
-            <img src="../../public/images/image-hero-mobile.png" alt="" class="mb:hidden lg:hidden">
+            <img src="./images/image-hero-mobile.png" alt="" class="table:hidden desktop:hidden">
         </div>
     </section>
 </main>
