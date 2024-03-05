@@ -19,13 +19,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <!-- <div class="min-w-[350px] mt-4">
-    </div> -->
       <slot />
-    <div >
+    <!-- <div class="z-[-999]">
       <img src="./images/image-hero-tablet.png" alt="" class="mov:hidden table:block  desktop:hidden absolute top-[-6rem] right-[-17rem]">
       <img src="./images/image-hero-desktop.png" alt="" class="w-[950px] mov:hidden table:hidden  desktop:block absolute top-[-10rem] right-[-20rem]">
-    </div>
+    </div> -->
  
   </body>
 </html>
@@ -42,7 +40,6 @@ const { title } = Astro.props;
     );
   }
   body {
-    height: 100vh;
     position: relative;
   }
 
