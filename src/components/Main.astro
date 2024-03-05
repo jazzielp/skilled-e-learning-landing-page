@@ -1,33 +1,51 @@
 ---
-import Button2 from './Button2.astro'
-import  { courses }  from '@/constants/courses.json'
-import Card from './Card.astro'
+import Button2 from "./Button2.astro";
+import { courses } from "@/constants/courses.json";
+import Card from "./Card.astro";
 type Course = {
-    title: string,
-    description: string
-}
-
+  title: string;
+  description: string;
+};
 ---
 
-<main class="max-w-[1110px] min-w-[350px] m-auto">
-    <section class="">
-        <div class="max-w-[360px] table:mt-9 desktop:mt-32">
-            <h1 class="text-[40px] text-custom-blue font-extrabold mb-3">Maximize skill, minimize budget</h1>
-            <p class="text-base text-custom-purple leading-[26px] mb-6 text-pretty">Our modern courses across a range of in-demand skills will give you the knowledge you need to live the life you want.</p>
-            <Button2 content="Get Started"/>
-        </div>
-        <div>
-            <img src="./images/image-hero-mobile.png" alt="" class="table:hidden desktop:hidden">
-        </div>
-    </section>
+<main class="max-w-[1110px] min-w-[320px] mx-4 table:mx-8 desktop:m-auto">
+  <div class="max-w-[360px] table:mt-9 desktop:mt-32">
+    <h1 class="text-[40px] text-custom-blue font-extrabold mb-3">
+      Maximize skill, minimize budget
+    </h1>
+    <p class="text-base text-custom-purple leading-[26px] mb-6 text-pretty">
+      Our modern courses across a range of in-demand skills will give you the
+      knowledge you need to live the life you want.
+    </p>
+    <Button2 content="Get Started" />
+  </div>
+  <div>
+    <img
+      src="./images/image-hero-mobile.png"
+      alt=""
+      class="table:hidden desktop:hidden"
+    />
+  </div>
 </main>
-<section class="mt-60 section-cards pb-20">
-    <div class="max-w-[1110px] min-w-[350px] m-auto grid grid-cols-1 table:grid-cols-2 desktop:grid-cols-3 gap-10">
-        <article class="w-[340px] py-10 px-6 bg-gradient-to-t from-gradient-1 to-gradient-2 bg-custom-white relative rounded-[10px] mt-6">
-            <p class="text-2xl text-custom-white leading-[32px] font-extrabold">Check out our most popular courses!</p>
-        </article>
-        {
-            courses.map((course: Course) => ( <Card title={course.title} description={course.description} />))
-        }
+<section class="w-full table:mt-60 section-cards pb-20">
+  <div
+    class="mx-4 table:mx-8 desktop:m-auto max-w-[1110px] min-w-[350px] grid grid-cols-1 table:grid-cols-2 desktop:grid-cols-3 gap-10"
+  >
+    <div class="flex justify-center">
+      <article
+        class="w-[340px] py-10 px-6 bg-gradient-to-t from-gradient-1 to-gradient-2 bg-custom-white relative rounded-[10px] mt-6"
+      >
+        <p class="text-2xl text-custom-white leading-[32px] font-extrabold">
+          Check out our most popular courses!
+        </p>
+      </article>
     </div>
+    {
+      courses.map((course: Course) => (
+        <div class="flex justify-center">
+          <Card title={course.title} description={course.description} />
+        </div>
+      ))
+    }
+  </div>
 </section>

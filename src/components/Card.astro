@@ -4,32 +4,30 @@ interface Props {
     description: string
 }
 
-import Animation from '@/assets/icons/Animation.astro'
-import Business from '@/assets/icons/Business.astro'
-import Crypto from '@/assets/icons/Crypto.astro'
-import Design from '@/assets/icons/Design.astro'
-import Photography from '@/assets/icons/Photography.astro'
+import Animation from '../../public/icons/icon-animation.svg'
+import Design from '../../public/icons/icon-design.svg'
+import Photography from '../../public/icons/icon-photography.svg'
+import Crypto from '../../public/icons/icon-crypto.svg'
+import Business from '../../public/icons/icon-business.svg'
 
 const { title, description } = Astro.props
 
 // Mapea los títulos a los iconos correspondientes
 const iconMapping: Record<string, any> = {
-  'Animation': Animation,
-  'Crypto': Crypto,
+  'Animation': Animation,   
   'Design': Design,
   'Photography': Photography,
+  'Crypto': Crypto,
   'Business': Business
 };
 
-const IconComponent = iconMapping[title];
+// const IconComponent = iconMapping[title];
 ---
 
 <article class="w-[340px] py-10 px-6 bg-custom-white relative rounded-[10px] mt-6">
-    <div class="absolute top-[-30px]">
-        {
-            IconComponent && <IconComponent />
-        }
-    </div>
+    <picture class="absolute top-[-30px]">
+        <img src={iconMapping[title].src} alt=`Icon ${title}`>
+    </picture>
     <header>
         <h2 class="text-xl font-extrabold text-custom-blue mb-4">{title}</h2>
         <p class="text-base text-custom-gray leading-[26px]">{description}</p>
