@@ -1,21 +1,38 @@
 ---
 interface Props {
     title: string
-    text: string
+    description: string
 }
 
-import Animation from '@/assets/icons/Animations.astro'
+import Animation from '@/assets/icons/Animation.astro'
+import Business from '@/assets/icons/Business.astro'
+import Crypto from '@/assets/icons/Crypto.astro'
+import Design from '@/assets/icons/Design.astro'
+import Photography from '@/assets/icons/Photography.astro'
 
-const { title, text } = Astro.props
+const { title, description } = Astro.props
+
+// Mapea los títulos a los iconos correspondientes
+const iconMapping: Record<string, any> = {
+  'Animation': Animation,
+  'Crypto': Crypto,
+  'Design': Design,
+  'Photography': Photography,
+  'Business': Business
+};
+
+const IconComponent = iconMapping[title];
 ---
 
-<article class="w-[340px] py-10 px-6 bg-custom-white relative rounded-[10px]">
+<article class="w-[340px] py-10 px-6 bg-custom-white relative rounded-[10px] mt-6">
     <div class="absolute top-[-30px]">
-        <Animation />
+        {
+            IconComponent && <IconComponent />
+        }
     </div>
     <header>
         <h2 class="text-xl font-extrabold text-custom-blue mb-4">{title}</h2>
-        <p class="text-base text-custom-gray leading-[26px]">{text}</p>
+        <p class="text-base text-custom-gray leading-[26px]">{description}</p>
     </header>
     <footer class="mt-5">
         <span class="text-lg leading-7 text-custom-pink font-bold">Get Started</span>

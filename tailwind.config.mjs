@@ -19,7 +19,7 @@ export default {
 			'mov': '320px',
 			// => @media (min-width: 375px) { ... }
 
-			'table': '800px',
+			'table': '700px',
 			// => @media (min-width: 700px) { ... }
 
 			'desktop': '1280px',
